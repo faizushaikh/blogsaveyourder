@@ -15,7 +15,7 @@ class Blogs_Category(models.Model):
     description=HTMLField()
     url=models.CharField(max_length=100)
     image=models.ImageField(upload_to='category/',blank=True)
-    add_date=models.DateField(auto_now_add=True,null=True)
+    add_dates=models.DateField(auto_now_add=True,null=True)
 
     def image_show(self):
         return format_html('<img src="/media/{}" style="width:40px;height:40px;border-radius:50%" />'.format(self.image))
@@ -36,7 +36,7 @@ class Blogs_Post(models.Model):
     category=models.ForeignKey(Blogs_Category,on_delete=models.CASCADE)
     image=models.ImageField(upload_to='post/',blank=True)
     videos=models.FileField(upload_to="videos/",blank=True)
-    add_date=models.DateField(auto_now_add=True,null=True)
+    add_dates=models.DateField(auto_now_add=True,null=True)
 
 
     def image_show(self):
