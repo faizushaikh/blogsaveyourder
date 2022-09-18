@@ -8,7 +8,7 @@ from .models import Blogs_Category,Blogs_Post
 def home(request):
     Img_data= Blogs_Post.objects.get_queryset().order_by('post_id')
     category=Blogs_Category.objects.all()
-    page=Paginator(Img_data,9)
+    page=Paginator(Img_data,6)
     print(page)
     page_number=request.GET.get('page')
     print(page_number)
