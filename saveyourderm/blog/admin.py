@@ -3,14 +3,14 @@ from .models import Blogs_Category,Blogs_Post
 
 
 class Blogs_CategoryAdmin(admin.ModelAdmin):
-    list_display=('title','description','url','image_show','add_dates')
+    list_display=('title','description','url','image_show','add_date')
     search_fields=('title',)
     
         
 
 
 class Blogs_PostAdmin(admin.ModelAdmin):
-    list_display=('post_id','title','content','url','category','image_show','videos','add_dates')
+    list_display=('post_id','title','content','url','category','image_show','videos','add_date')
     search_fields=('title',)
     list_filter=('category',)   
     list_per_page=50
